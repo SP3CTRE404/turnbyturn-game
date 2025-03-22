@@ -7,7 +7,7 @@ class Player:
         self.attacks = {
             0: {"name": "Quick Strike", "damage": 8, "blockable": True},
             1: {"name": "Strong Strike", "damage": 20, "blockable": True},
-            2: {"name": "Fireball", "damage": 16, "blockable": True},
+            2: {"name": "Fireball", "damage": 16, "blockable": False},
             3: {"name": "Ice Shard", "damage": 12, "blockable": True},
             4: {"name": "Poison Dart", "damage": 20, "blockable": True}
         }

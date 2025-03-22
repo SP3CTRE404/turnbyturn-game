@@ -8,10 +8,10 @@ class Villain:
             1: {"name": "Bite", "damage": 16, "blockable": True},
             2: {"name": "Heavy Smash", "damage": 24, "blockable": True},
             3: {"name": "Fire Breath", "damage": 20, "blockable": False},
-            4: {"name": "Poison Spit", "damage": 16, "blockable": True},
+            4: {"name": "Poison Spit", "damage": 16, "blockable": False},
             5: {"name": "Special 1", "damage": 20, "blockable": True},
             6: {"name": "Special 2", "damage": 24, "blockable": True},
-            7: {"name": "Special 3", "damage": 28, "blockable": True}
+            7: {"name": "Special 3", "damage": 28, "blockable": False}
         }
 
     def attack(self, attack_index):
