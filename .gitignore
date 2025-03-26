@@ -56,3 +56,5 @@ Thumbs.db # Windows
 *.zip
 *.rar
 *.7z
+
+.ipynb
