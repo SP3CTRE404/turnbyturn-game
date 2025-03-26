@@ -121,7 +121,7 @@ class DataGenerator:
         df = pd.DataFrame({
             'player_health_history': all_player_health,
             'villain_health_history': all_villain_health,
-            'battle_outcome': all_outcomes
+            # 'battle_outcome': all_outcomes
         })
         df.to_csv(filepath, index=False)
         print(f"Test data saved to {filepath}")
@@ -162,6 +162,6 @@ num_train_sims = 50000
 num_eval_sims = 1000
 num_test_sims = 100
 battle_simulator = DataGenerator()
-battle_simulator.generate_training_data(Player, Villain, num_train_sims)
+# battle_simulator.generate_training_data(Player, Villain, num_train_sims)
 battle_simulator.generate_test_data(Player, Villain, num_test_sims)
-battle_simulator.generate_eval_data(Player, Villain, num_eval_sims)
+# battle_simulator.generate_eval_data(Player, Villain, num_eval_sims)
