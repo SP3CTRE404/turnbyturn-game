@@ -21,17 +21,6 @@ class Player:
     def take_damage(self, damage):
         self.health -= damage
         self.health = max(0, self.health)
-
-    def dodge(self):
-        return random.choice([True, False])
-
-    def block(self, incoming_attack_index, villain_attacks):
-        if incoming_attack_index in villain_attacks and villain_attacks[incoming_attack_index]["blockable"]:
-            return villain_attacks[incoming_attack_index]["damage"] // 2
-        elif incoming_attack_index in villain_attacks:
-            return villain_attacks[incoming_attack_index]["damage"]
-        else:
-            return 0
-
+        
     def is_alive(self):
         return self.health > 0

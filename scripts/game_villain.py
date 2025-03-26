@@ -1,4 +1,4 @@
-
+import random
 class Villain:
     def __init__(self, name="Villain", health=100):
         self.name = name
@@ -23,17 +23,6 @@ class Villain:
     def take_damage(self, damage):
         self.health -= damage
         self.health = max(0, self.health)
-
-    def dodge(self):
-        return random.choice([True, False])
-
-    def block(self, incoming_attack_index, player_attacks):
-        if incoming_attack_index in player_attacks and player_attacks[incoming_attack_index]["blockable"]:
-            return player_attacks[incoming_attack_index]["damage"] // 2
-        elif incoming_attack_index in player_attacks:
-            return player_attacks[incoming_attack_index]["damage"]
-        else:
-            return 0
 
     def is_alive(self):
         return self.health > 0
