@@ -162,6 +162,6 @@ num_train_sims = 50000
 num_eval_sims = 1000
 num_test_sims = 100
 battle_simulator = DataGenerator()
-# battle_simulator.generate_training_data(Player, Villain, num_train_sims)
-# battle_simulator.generate_test_data(Player, Villain, num_test_sims)
+battle_simulator.generate_training_data(Player, Villain, num_train_sims)
+battle_simulator.generate_test_data(Player, Villain, num_test_sims)
 battle_simulator.generate_eval_data(Player, Villain, num_eval_sims)
