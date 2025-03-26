@@ -137,8 +137,8 @@ class DataGenerator:
             player_health, villain_health, outcome, wont_need = self._simulate_battle(player_class, villain_class, 100)
 
             if outcome != -1 and len(player_health) >= 5 and len(villain_health) >= 5:
-                all_player_health.append(player_health[:5])  # Store only first 5 turns
-                all_villain_health.append(villain_health[:5])  # Store only first 5 turns
+                all_player_health.append(player_health[:10])  # Store only first 5 turns
+                all_villain_health.append(villain_health[:10])  # Store only first 5 turns
                 all_outcomes.append(outcome)
             else:
                 excluded_inconclusive_count += 1
@@ -162,6 +162,6 @@ num_train_sims = 50000
 num_eval_sims = 1000
 num_test_sims = 100
 battle_simulator = DataGenerator()
-battle_simulator.generate_training_data(Player, Villain, num_train_sims)
-battle_simulator.generate_test_data(Player, Villain, num_test_sims)
+# battle_simulator.generate_training_data(Player, Villain, num_train_sims)
+# battle_simulator.generate_test_data(Player, Villain, num_test_sims)
 battle_simulator.generate_eval_data(Player, Villain, num_eval_sims)
