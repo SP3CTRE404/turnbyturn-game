@@ -132,35 +132,35 @@ class DataGenerator:
         all_villain_health = []
         all_outcomes = []
         excluded_inconclusive_count = 0
-        
+
         for _ in range(num_eval_simulations):  
             player_health, villain_health, outcome, wont_need = self._simulate_battle(player_class, villain_class, 100)
-            
+
             if outcome != -1 and len(player_health) >= 5 and len(villain_health) >= 5:
                 all_player_health.append(player_health[:5])  # Store only first 5 turns
                 all_villain_health.append(villain_health[:5])  # Store only first 5 turns
                 all_outcomes.append(outcome)
             else:
                 excluded_inconclusive_count += 1
-    
+
         data_dir = "data"
         os.makedirs(data_dir, exist_ok=True)
         filepath = os.path.join(data_dir, filename)
-    
+
         df = pd.DataFrame({
             'player_health_history': all_player_health,
             'villain_health_history': all_villain_health,
             'battle_outcome': all_outcomes
         })
         df.to_csv(filepath, index=False)
-    
+
         print(f"Evaluation data saved to {filepath} (first {num_eval_simulations} complete simulations that lasted at least 5 turns)")
         print(f"Number of battles excluded from evaluation (inconclusive or less than 5 turns): {excluded_inconclusive_count}")
 
 
-num_train_sims = 50
-num_eval_sims = 10
-num_test_sims = 10
+num_train_sims = 50000
+num_eval_sims = 1000
+num_test_sims = 100
 battle_simulator = DataGenerator()
 battle_simulator.generate_training_data(Player, Villain, num_train_sims)
 battle_simulator.generate_test_data(Player, Villain, num_test_sims)
